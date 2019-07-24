@@ -1,13 +1,33 @@
-MIT License
+License
 
 Copyright (c) 2019 Mauricio Carrillo-Tripp, PhD
+
+Main developers v1.0:
+
+Biomolecular Diversity Lab (tripplab.com)
+CINVESTAV
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+to use, copy, modify, merge, and/or distribute
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
+
+-All or any part of the software is free only for academic purposes
+-Any reports or published results obtained with the help of this tool 
+ shall acknowledge its use and credit the developers by including the 
+ following reference:
+
+MDdb paper (coming soon)
+
+-Electronic documents shall include a direct link to the official page:
+
+http://md-db.org
+
+Proper citation is essential to continued funding for tool development, 
+as it is the primary way in which we demonstrate the value of our software 
+to the scientific community. Thank you for your attention to these details.
 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
