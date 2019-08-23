@@ -51,6 +51,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(\App\Repositories\SolventRepository::class, \App\Repositories\SolventRepositoryEloquent::class);
         $this->app->bind(\App\Repositories\BiomolRepository::class, \App\Repositories\BiomolRepositoryEloquent::class);
         $this->app->bind(\App\Repositories\MdRepository::class, \App\Repositories\MdRepositoryEloquent::class);
+        $this->app->bind(\App\Repositories\HtmolRepository::class, \App\Repositories\HtmolRepositoryEloquent::class);
         //:end-bindings:
     }
 }
