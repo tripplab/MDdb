@@ -26,6 +26,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(\App\Repositories\MolecularDynamicRepository::class, \App\Repositories\MolecularDynamicRepositoryEloquent::class);
         $this->app->bind(\App\Repositories\MddbConfigRepository::class, \App\Repositories\MddbConfigRepositoryEloquent::class);
         $this->app->bind(\App\Repositories\ViewRepository::class, \App\Repositories\ViewRepositoryEloquent::class);
+        $this->app->bind(\App\Repositories\IpRepository::class, \App\Repositories\IpRepositoryEloquent::class);
         //:end-bindings:
     }
 }
