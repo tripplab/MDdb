@@ -43,6 +43,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(\App\Repositories\MethodRepository::class, \App\Repositories\MethodRepositoryEloquent::class);
         $this->app->bind(\App\Repositories\AuthorRepository::class, \App\Repositories\AuthorRepositoryEloquent::class);
         $this->app->bind(\App\Repositories\PdbRepository::class, \App\Repositories\PdbRepositoryEloquent::class);
+        $this->app->bind(\App\Repositories\HpcCentreRepository::class, \App\Repositories\HpcCentreRepositoryEloquent::class);
         //:end-bindings:
     }
 }
