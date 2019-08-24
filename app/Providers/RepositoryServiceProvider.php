@@ -53,6 +53,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(\App\Repositories\MdRepository::class, \App\Repositories\MdRepositoryEloquent::class);
         $this->app->bind(\App\Repositories\HtmolRepository::class, \App\Repositories\HtmolRepositoryEloquent::class);
         $this->app->bind(\App\Repositories\NglRepository::class, \App\Repositories\NglRepositoryEloquent::class);
+        $this->app->bind(\App\Repositories\NglSelectionoSchemeRepository::class, \App\Repositories\NglSelectionoSchemeRepositoryEloquent::class);
         //:end-bindings:
     }
 }
