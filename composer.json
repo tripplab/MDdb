@@ -15,7 +15,8 @@
         "prettus/l5-repository": "^2.6",
         "spatie/laravel-permission": "^2.37",
         "webpatser/laravel-uuid": "^3.0",
-        "dingo/api": "^2"
+        "dingo/api": "^2",
+        "tymon/jwt-auth": "1.0.*"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
