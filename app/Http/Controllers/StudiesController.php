@@ -10,7 +10,7 @@ use Prettus\Validator\Exceptions\ValidatorException;
 use App\Http\Requests\StudyCreateRequest;
 use App\Http\Requests\StudyUpdateRequest;
 use App\Repositories\StudyRepository;
-use App\Validators\StudyValidator;
+// use App\Validators\StudyValidator;
 
 /**
  * Class StudiesController.
@@ -33,12 +33,10 @@ class StudiesController extends Controller
      * StudiesController constructor.
      *
      * @param StudyRepository $repository
-     * @param StudyValidator $validator
      */
-    public function __construct(StudyRepository $repository, StudyValidator $validator)
+    public function __construct(StudyRepository $repository)
     {
         $this->repository = $repository;
-        $this->validator  = $validator;
     }
 
     /**
@@ -51,14 +49,9 @@ class StudiesController extends Controller
         $this->repository->pushCriteria(app('Prettus\Repository\Criteria\RequestCriteria'));
         $studies = $this->repository->all();
 
-        if (request()->wantsJson()) {
-
-            return response()->json([
-                'data' => $studies,
-            ]);
-        }
-
-        return view('studies.index', compact('studies'));
+        return response()->json([
+            'data' => $studies,
+        ]);
     }
 
     /**
