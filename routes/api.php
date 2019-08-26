@@ -10,7 +10,7 @@ use Dingo\Api\Routing\Router;
 $api = app(Router::class);
 
 $api->version('v1', function (Router $api) {
-    $api->group(['prefix' => 'auth', 'namespace' => 'App\Http\Controllers\Auth'], function (Router $api) {
+    $api->group(['prefix' => 'auth', 'namespace' => 'App\Http\Controllers'], function (Router $api) {
         $api->post('signup', 'AuthController@signUp');
         $api->post('login', 'AuthController@login');
 
@@ -19,7 +19,7 @@ $api->version('v1', function (Router $api) {
 
         $api->post('logout', 'AuthController@logout');
         $api->post('refresh', 'AuthController@refresh');
-        $api->get('me', 'UserController@me');
+        $api->get('me', 'UsersController@me');
     });
 
 
@@ -40,15 +40,15 @@ $api->version('v1', function (Router $api) {
         ]);
 
         //Users
-        $api->get('users', 'UserController@index');
-        $api->get('users/{id}', 'UserController@show');
-        $api->post('users/', 'UserController@store');
-        $api->put('users/{id}', 'UserController@update');
-        $api->delete('users/{id}', 'UserController@destroy');
-        $api->post('users/{user}/restore', 'UserController@restore');
-        $api->get('search/users', 'UserController@search');
-        $api->get('roles/users', 'UserController@roles');
-        $api->get('permissions/users', 'UserController@permissions');
+        $api->get('users', 'UsersController@index');
+        $api->get('users/{id}', 'UsersController@show');
+        $api->post('users/', 'UsersController@store');
+        $api->put('users/{id}', 'UsersController@update');
+        $api->delete('users/{id}', 'UsersController@destroy');
+        $api->post('users/{user}/restore', 'UsersController@restore');
+        $api->get('search/users', 'UsersController@search');
+        $api->get('roles/users', 'UsersController@roles');
+        $api->get('permissions/users', 'UsersController@permissions');
 
         //Studies
         $api->post('study', 'StudiesController@store');
@@ -58,8 +58,10 @@ $api->version('v1', function (Router $api) {
 
 
 // Routes for visitors not login required
-    $api->get('studies', 'App\Http\Controllers\StudiesController@index');
-    $api->get('study/{id}', 'StudiesController@show');
+    $api->group(['namespace' => 'App\Http\Controllers'], function (Router $api) {
+        $api->get('studies', 'StudiesController@index');
+        $api->get('study/{id}', 'StudiesController@show');
+    });
 
     $api->get('hello', function () {
         return response()->json([
