@@ -1,0 +1,321 @@
+/* reference: https://github.com/dompdf/dompdf/issues/1208 
+declared/used in: statement.blade.php;
+*/
+body{
+  font-family: 'fontbold', sans-serif;
+  font-size: 11px; 
+}
+.dataInv {
+  margin-top: 10px;
+}
+.dataInv, .logoHead{
+  width: 50%;
+  float: left;
+  height: 100px;
+  padding: 0 0 10px 0;
+}
+.dataInv .titleDoc{
+  font-weight: normal;
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+.dataInv .invName{
+  font-weight: normal;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.logoHead{
+  text-align: right;
+}
+
+.logo{
+  width: 220px;
+}
+.month_right {
+  text-align: right !important;
+  padding-right: 3px !important;
+}
+.titleCont{
+  text-align: center;
+  font-weight: normal;
+}
+.top20 {
+  margin-top: 15px !important;
+}
+.top50 {
+  margin-top: 50px !important;
+}
+.resumenGeneral{
+  background: #EEEEEE;
+  height: 135px;
+  padding: 10px 15px;
+}
+
+.h1{
+  font-size: 19px;
+}
+.h2{
+  font-size: 15px;
+}
+
+.margintop15{
+  margin-top: 15px;
+}
+
+.cardElem{
+  width: 23%;
+  height: 60px;
+  margin: 0 1%;
+  background: #DFE3EB;
+  float: left;
+  text-align: left !important;
+
+}
+
+.float-right{
+  float: right;
+}
+
+.icocard{
+  height: 20px;
+}
+
+.textcard{
+  text-align: right !important;
+}
+
+.cardTit{
+  text-align: right !important;
+  height: 25px;
+  padding: 0 5px 0 0;
+}
+
+.cardData{
+  font-size: 15px;
+  text-align: right;
+  padding: 10px 10px 0 10px;
+  height: 50px;
+  
+}
+.gray{
+  background: rgba(35, 31, 32, 0.75);
+  color: #ffffff;
+}
+.gray2{
+  background: rgba(35, 31, 32, 0.4);
+  color: #ffffff;
+}
+.red{
+  background: #e02725;
+  color: #ffffff;
+}
+.red2{
+  background: rgba(224, 39, 37, 0.8);
+  color: #ffffff;
+}
+.green{
+  background: #81bb41;
+  color: #ffffff;
+}
+.green2{
+  background: rgba(129, 187, 65, 0.8);
+  color: #ffffff;
+}
+.blue{
+  background: #005ca6;
+  color: #ffffff;
+}
+.blue2{
+  /*background: #024B61;*/
+  background: rgba(0, 92, 166, 0.8);
+  color: #ffffff;
+}
+.light-blue{
+  background: #5183c3;
+  color: #ffffff;
+}
+.light-blue2{
+  background: rgba(81, 131, 195, 0.8);
+  color: #ffffff;
+}
+.black-light {
+  background: rgba(0,0,0,0.8);
+  color: #ffffff;
+}
+
+.ContenTable{
+  width:100%;
+  margin-bottom: 25px;
+  padding: 0;
+}
+
+.tableHeader{
+  height:15px;
+  padding:10px;
+  text-align:center;
+  text-transform:uppercase;
+}
+.TableOne {
+  width:100%;
+}
+
+.TableOne tr.heads{
+  background: #005ca6;
+  text-align: center
+  color: #fff;
+}
+
+.TableOne .gross-fee{
+    width: 100px;
+}
+
+.TableOne tr.total{
+  background:#fff;
+  color: black;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.page {
+  margin-top: 40px;
+}
+
+.TableOne td,th{
+  padding: 5px;
+  font-size: 14px;
+}
+
+.TableOne th{
+  text-align: center;
+  color: #fff;
+}
+
+.column {
+    padding: 10px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+footer{
+  background-color: #005ca6;
+}
+
+footer .pagenumtext { text-align: center; margin-bottom: 10px;}
+
+footer .pagenum:before { content: counter(page); }
+
+footer .terms {
+  position: fixed; bottom: 0px; left: 0px; right: 0px; height: 40px; margin-bottom: 10px;
+}
+
+footer .contactData{
+  padding: 5px;
+  height: 50px;
+  color: #fff;
+}
+
+footer .contactright{
+  width: 40%;
+  float: left;
+  text-align: right; 
+  margin-top: 0px;
+  padding-top: 4px;
+}
+footer .contactmiddle{
+  width: 20%;
+  float: left;
+  text-align: center;
+  margin-top: 0px;
+  padding-top: 4px;
+}
+footer .contactleft{
+  width: 40%;
+  float: left;
+  margin-top: 0px;
+  padding-top: 4px;
+}
+
+.page{
+  text-align: center;
+}
+
+.TableOne th, td {
+  padding: 3px 0;
+  border: 0px;
+}
+
+.totales {
+  background: #81bb41;
+  color: white;
+  font-weight: bold;
+  padding: 5px 0;
+}
+
+.subtotaltext {
+  text-align: left !important;
+  padding-left: 15px !important;
+}
+
+.monto {
+  text-align: center !important;
+  padding-right: 5px !important;
+}
+
+.blueRow {
+  background: #005ca6; color: white;
+}
+
+.greenRow {
+  background: #81bb41; color: white;
+}
+
+.normalRow {
+  background: white; 
+  color: black!important;
+}
+
+.lightGreenRow {
+  background: #e2e9d5;
+  color: black!important;
+}
+
+.yellowRow {
+  background: #DEE15D;
+}
+
+.blackColor {
+  color: black;
+}
+
+.subtitle {
+  margin: 0px;
+  padding: 4px;
+  font-size: 16px;
+}
+
+.textCenter {
+  text-align: center !important;
+}
+
+.textRight {
+  text-align: right !important;
+}
+
+.textLeft {
+  text-align: left !important;
+}
+
+.textWidgets {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+table {
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+}

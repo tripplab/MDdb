@@ -1,0 +1,28 @@
+version: '2'
+
+services:
+  mariadb:
+    tty: true
+    image: 'bitnami/mariadb:latest'
+    environment:
+      - MARIADB_ROOT_PASSWORD=secret
+      - MARIADB_USER=mddbresearch
+      - MARIADB_DATABASE=mddbresearch
+      - MARIADB_PASSWORD=concentrico11
+
+  myapp:
+    tty: true
+    image: 'bitnami/laravel:latest'
+    labels:
+      kompose.service.type: nodeport
+    environment:
+      - DB_HOST=mariadb
+      - DB_USERNAME=mddbresearch
+      - DB_DATABASE=mddbresearch
+      - DB_PASSWORD=concentrico11
+    depends_on:
+      - mariadb
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/app

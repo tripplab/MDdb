@@ -1,0 +1,14 @@
+Version 0.2.0:
+
+
+Version 0.1.0
+ - chore: ignore bash files
+ - Merge branch 'features/role-based-users' into develop
+ - chore: modify DatabaseSeeder
+ - feat: use users, roles and users-to-roles seeder
+ - feat: use Role trait in User model
+ - chore: change guard order in auth config file
+ - feat: published laravel-permission assets config and migration files
+ - feat: include and install spatie/laravel-permission
+ - chore: first commit
+

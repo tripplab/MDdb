@@ -1,0 +1,31 @@
+image: lorisleiva/laravel-docker:7.1
+
+services:
+  - mysql:5.7
+
+variables:
+  MYSQL_DATABASE: homestead
+  MYSQL_ROOT_PASSWORD: secret
+  DB_HOST: mysql
+  DB_USERNAME: root
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - vendor/
+
+codestyle:
+  stage: test
+  cache: {}
+  script:
+    - wget https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v2.12.3/php-cs-fixer.phar -O php-cs-fixer
+    - chmod a+x php-cs-fixer
+    - ./php-cs-fixer fix --dry-run --using-cache=no --verbose --config=.php_cs    
+    
+migrations:
+  stage: test
+  script:
+    - composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
+    - cp .env.example .env
+    - php artisan key:generate
+    - php artisan migrate --seed
