@@ -22,4 +22,6 @@ class Author extends Model implements Transformable
      */
     protected $fillable = [];
 
+    protected $table = 'author';
+
 }

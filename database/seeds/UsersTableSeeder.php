@@ -1,58 +1,40 @@
 <?php
 
-use App\Models\Role;
-use App\User;
 use Illuminate\Database\Seeder;
+use App\User;
 
 class UsersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
+     *
+     * @return void
      */
     public function run()
     {
-        $user_roles = [
-            ['name' => 'Admin', 'description' => 'The super-admin role.'],
-        ];
+        $users = array(
+			[
+				'name' => 'Juan D.',
+				'lastname' => 'Carrillo',
+				'email' => 'jd@research.dev',
+				'pwd' => Hash::make('random'),
+			],
+			[
+				'name' => 'Erik R.',
+				'lastname' => 'Munoz',
+				'email' => 'erik.r@research.dev',
+				'pwd' => Hash::make('dlagarza'),
+			],
+      	);
 
-        foreach ($user_roles as $ut) {
-            $user_role = new Role();
-            $user_role->name = $ut['name'];
-            $user_role->description = $ut['description'];
-            $user_role->save();
-        }
+		foreach($users as $key => $u) {
+			$user = new User;
+			$user->name = $u['name'].' '.$u['lastname'];
+			$user->email = $u['email'];
+			$user->password = $u['pwd'];
 
-        $users = [
-            [
-                'name' => 'Testing',
-                'lastname' => 'Concéntrico',
-                'username' => 'dev',
-                'email' => 'dev@concentrico.com.mx',
-                'user_role_id' => [1],
-                'pwd' => Hash::make('secret'),
-            ],
-            [
-                'name' => 'Homero',
-                'lastname' => 'Marín',
-                'username' => 'hmarin',
-                'email' => 'hmarin@concentrico.com.mx',
-                'user_role_id' => [1],
-                'pwd' => Hash::make('secret'),
-            ],
-        ];
+			$user->save();
 
-        foreach ($users as $key => $u) {
-            $user = new User();
-            $user->name = $u['name'].' '.$u['lastname'];
-            $user->email = $u['email'];
-            $user->username = $u['username'];
-            $user->password = $u['pwd'];
-            $user->remember_token = str_random(10);
-
-            $user->save();
-            foreach ($u['user_role_id'] as $rol) {
-                $user->hasRoles()->attach($rol);
-            }
-        }
+		}  // End of users iterator
     }
 }

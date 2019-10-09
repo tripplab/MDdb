@@ -47,7 +47,14 @@ class StudiesController extends Controller
     public function index()
     {
         $this->repository->pushCriteria(app('Prettus\Repository\Criteria\RequestCriteria'));
-        $studies = $this->repository->all();
+        $studies = $this->repository->with(['authors', 'coauthors', 'ipViews', 'published'])->all();
+
+        $studies = $studies->map(function($study) {
+            $study->views = $study->ipViews->count();
+            $study->authors_list = implode(',', $study->authors->pluck('first_name')->toArray());
+            $study->coauthors_list = implode(',', $study->coauthors->pluck('first_name')->toArray());
+            return $study;
+        });
 
         return response()->json([
             'data' => $studies,

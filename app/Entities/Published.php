@@ -22,4 +22,6 @@ class Published extends Model implements Transformable
      */
     protected $fillable = [];
 
+    protected $table = 'published';
+
 }
