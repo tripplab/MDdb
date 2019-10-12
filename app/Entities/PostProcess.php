@@ -20,6 +20,15 @@ class PostProcess extends Model implements Transformable
      *
      * @var array
      */
-    protected $fillable = [];
+    protected $guarded = ['id'];
+
+    protected $table = 'post_process';
+
+    public function studies()
+    {
+        $related = $this->belongsTo('App\Entities\Study');
+
+        return $related;
+    }
 
 }
