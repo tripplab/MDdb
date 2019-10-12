@@ -20,7 +20,7 @@ class Study extends Model implements Transformable
      *
      * @var array
      */
-    protected $fillable = [];
+    protected $guarded = ['id'];
 
     protected $table = 'study';
 
@@ -52,6 +52,20 @@ class Study extends Model implements Transformable
     public function published()
     {
         $related = $this->hasOne('App\Entities\Published', 'study_id');
+
+        return $related;
+    }
+
+    public function simulationProtocolAnalysis()
+    {
+        $related = $this->hasMany('App\Entities\SimulationProtocolAnalysis', 'study_id');
+
+        return $related;
+    }
+
+    public function postProcess()
+    {
+        $related = $this->hasMany('App\Entities\PostProcess', 'study_id');
 
         return $related;
     }

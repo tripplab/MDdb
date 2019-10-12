@@ -70,11 +70,11 @@ class StudiesController extends Controller
      *
      * @throws \Prettus\Validator\Exceptions\ValidatorException
      */
-    public function store(StudyCreateRequest $request)
+    public function store(Request $request)
     {
         try {
 
-            $study = $this->repository->create($request->all());
+            $study = $this->repository->saveBasic($request);
 
             $response = [
                 'message' => 'Study created.',
