@@ -1,5 +1,5 @@
 # MDdb
-MDdb Science Gateway
+MDdb Science Gateway: setups & trajs of well-cited studies for experts & non-experts
 
 Research on biology has seen exciting progress with the use of Molecular Dynamics (MD) computational simulations. An increasingly large volume of MD data is produced daily throughout the world. This trend is expected to grow exponentially with the advent of the exascale era. The lack of a global standard, metadata definitions, tools, and platforms that implement and enforce them has been a significant obstacle to cite, share, find, access, operate, reuse, visualize, or even reproduce MD digital research objects. 
 
